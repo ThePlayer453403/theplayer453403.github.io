@@ -2,6 +2,25 @@
 <html>
     <head></head>
     <body>
-        <h1>Hello World!</h1>
+        <a>距离中考还要</a>
+        <a id="d"></a>
+        <a>天</a>
+        <a id="h"></a>
+        <a>小时</a>
+        <a id="m"></a>
+        <a>分</a>
+        <a id="s"></a>
+        <a>秒</a>
+        <script>
+            reload()
+            function reload() {
+                var date = 1781971200000 - Date.now();
+                document.getElementById("d").innerHTML = parseInt(date/86400000);
+                document.getElementById("h").innerHTML = parseInt(date/3600000%24);
+                document.getElementById("m").innerHTML = parseInt(date/60000%60);
+                document.getElementById("s").innerHTML = parseInt(date/1000%60);
+            }
+            setInterval(reload, 1000)
+        </script>
     </body>
 </html>
